@@ -5,36 +5,46 @@ class CurrencyConvertorMaterialPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    final border = OutlineInputBorder(
+      borderSide: const BorderSide(
+        color: Color.fromARGB(255, 8, 8, 8),
+        width: 2.0,
+        style: BorderStyle.solid,
+      ),
+      borderRadius: BorderRadius.circular(60),
+    );
+
+    return Scaffold(
       backgroundColor: Colors.blueGrey,
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(
+            const Text(
               '0',
               style: TextStyle(
                   fontSize: 55,
                   fontWeight: FontWeight.bold,
                   color: Color.fromARGB(255, 255, 255, 255)),
             ),
-            TextField(
-              style: TextStyle(color: Colors.black),
-              decoration: InputDecoration(
-                hintText: "Please enter the amount in USD",
-                hintStyle: TextStyle(
-                  color: Colors.black,
-                ),
-                prefixIcon: Icon(Icons.monetization_on_outlined),
-                prefixIconColor: Colors.black,
-                filled: true,
-                fillColor: Colors.white,
-                focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(
-                    color: Color.fromARGB(255, 8, 8, 8),
-                    width: 2.0,
-                    style: BorderStyle.solid,
+            Container(
+              padding: const EdgeInsets.all(10.0),
+              child: TextField(
+                style: const TextStyle(color: Colors.black),
+                decoration: InputDecoration(
+                  hintText: "Please enter the amount in USD",
+                  hintStyle: const TextStyle(
+                    color: Colors.black,
                   ),
+                  prefixIcon: const Icon(Icons.monetization_on_outlined),
+                  prefixIconColor: Colors.black,
+                  filled: true,
+                  fillColor: Colors.white,
+                  focusedBorder: border,
+                  enabledBorder: border,
+                ),
+                keyboardType: const TextInputType.numberWithOptions(
+                  decimal: true,
                 ),
               ),
             )
