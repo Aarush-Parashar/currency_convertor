@@ -1,6 +1,7 @@
 # currency_convertor
 
-This is a basic currency convertor app I created while learning flutter
+This is a basic currency convertor app I created while learning flutter.
+It converts USD to INR only.
 
 ## Getting Started
 
